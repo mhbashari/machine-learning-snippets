@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from numpy.core.multiarray import ndarray
+
+
 class LinearRegression:
     def __init__(self, train_X: ndarray, train_Y: ndarray, learning_rate=0.001, training_epochs=100):
         self.train_X = train_X
@@ -52,10 +54,11 @@ def data_maker(num=80):
     Y = np.float32(np.ceil(5 * (np.sin(X) + X / 5)))
     return X, Y
 
+
 if __name__ == "__main__":
     data = data_maker(5)
     # print(data)
     # reduce_dimension_and_plot(    print(data))
     # plot(*data_maker())
     regression = LinearRegression(*data_maker())
-    visualize(*(regression.fit()+data_maker()))
+    visualize(*(regression.fit() + data_maker()))
