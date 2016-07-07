@@ -28,10 +28,8 @@ class LinearRegression:
         with tf.Session() as sess:
             sess.run(init)
             for epoch in range(self.training_epochs):
-                avg_cost = 0.
                 for i, out in zip(self.train_X, self.train_Y):
                     sess.run(optimizer, feed_dict={x: i, y: out})
-                    # c=sess.run(cost)
                     print("Epoch:", '%04d' % (epoch + 1), "cost=", "W=", sess.run(a), "b=", sess.run(b))
             print("Optimization Finished!")
             training_cost = sess.run(cost, feed_dict={x: self.train_X, y: self.train_Y})
@@ -44,7 +42,6 @@ def visualize(a, b, train_X: ndarray, train_Y: ndarray):
     plt.plot(train_X, train_Y)
     plt.plot(train_X, a * train_X + b, label='Fitted line')
     plt.scatter(train_X, train_Y)
-    # plt.plot(train_X, sess.run(a) * train_X + sess.run(b), label='Fitted line')
     plt.legend()
     plt.show()
 
@@ -57,8 +54,5 @@ def data_maker(num=80):
 
 if __name__ == "__main__":
     data = data_maker(5)
-    # print(data)
-    # reduce_dimension_and_plot(    print(data))
-    # plot(*data_maker())
     regression = LinearRegression(*data_maker())
     visualize(*(regression.fit() + data_maker()))
