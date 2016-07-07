@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from numpy.core.multiarray import ndarray
-rng = np.random
 class LinearRegression:
     def __init__(self, train_X: ndarray, train_Y: ndarray, learning_rate=0.001, training_epochs=100):
         self.train_X = train_X
