@@ -13,3 +13,4 @@ x = tf.Variable(float(point))
 g_x = x * x
 fog_x = g_x * g_x
 print(get_gradient(fog_x))
+# [108.0]
