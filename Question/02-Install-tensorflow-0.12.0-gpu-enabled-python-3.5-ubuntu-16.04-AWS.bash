@@ -13,7 +13,7 @@ sudo apt-get update
 sudo apt-get install -y cuda
 
 # get cudnn
-# Register and download the cuDNN v4 from https://developer.nvidia.com/rdp/cudnn-download
+# Register and download the cuDNN v5 from https://developer.nvidia.com/rdp/cudnn-download
 CUDNN_FILE=cudnn-8.0-linux-x64-v5.1.tgz
 wget http://developer.download.nvidia.com/compute/redist/cudnn/v4/${CUDNN_FILE}
 tar xvzf ${CUDNN_FILE}
