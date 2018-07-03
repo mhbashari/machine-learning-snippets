@@ -19,7 +19,7 @@ class LinearRegression:
         a = tf.Variable(1.0, name="weight")
         b = tf.Variable(1.0, name="bias")
 
-        pred = tf.mul(x, a) + b
+        pred = tf.multiply(x, a) + b
 
         cost = tf.reduce_mean(tf.abs(pred - y))
 
